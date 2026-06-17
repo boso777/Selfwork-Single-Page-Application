@@ -1,6 +1,6 @@
 export default function List({names}){
     return (
-        <ul>
+        <ul className="custom_list">
             {names.map((single_name)=>{
                 return(
                     <li>{single_name}</li>
