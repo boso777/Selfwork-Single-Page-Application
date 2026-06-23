@@ -13,7 +13,7 @@ setSubmitted(1);
 }
 
 if(submitted === 1){
-    card = <div>
+    card = <div className="custom-card">
         <p>{name}</p>
         <p>{mail}</p>
     </div>
@@ -22,14 +22,14 @@ if(submitted === 1){
 
     return(
         <>
-        <form onSubmit={(e) => {e.preventDefault() ; submit()}}>   
-            <input type="text" id="name" onChange={(e) => setName(e.target.value)}/>
+        <form onSubmit={(e) => {e.preventDefault() ; submit()}} className="custom-bg custom-form">   
             <label htmlFor="name">Name</label>
+            <input type="text" id="name" onChange={(e) => setName(e.target.value)}/>
 
-            <input type="text" id="mail" onChange={(e) => setMail(e.target.value)}/>
             <label htmlFor="mail">Email</label>
+            <input type="text" id="mail" onChange={(e) => setMail(e.target.value)}/>
 
-            <button type="submit">Conferma!</button>
+            <button type="submit" className="">Conferma!</button>
         </form>
 
         {card}
