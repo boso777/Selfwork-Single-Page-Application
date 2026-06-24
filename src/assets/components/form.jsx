@@ -1,4 +1,6 @@
 import { useState } from "react";
+import NameForm from "./NameForm";
+import EmailForm from "./EmailForm";
 
 export default function Form(){
 
@@ -8,11 +10,7 @@ const [submitted, setSubmitted] = useState(0)
 
 let card = null;
 
-function submit(){
-setSubmitted(1);
-}
-
-if(submitted === 1){
+if(submitted === 1 && name !== "" && mail !== ""){
     card = <div className="custom-card">
         <p>{name}</p>
         <p>{mail}</p>
@@ -22,13 +20,10 @@ if(submitted === 1){
 
     return(
         <>
-        <form onSubmit={(e) => {e.preventDefault() ; submit()}} className="custom-bg custom-form">   
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" onChange={(e) => setName(e.target.value)}/>
-
-            <label htmlFor="mail">Email</label>
-            <input type="text" id="mail" onChange={(e) => setMail(e.target.value)}/>
-
+        <form onSubmit={(e) => {e.preventDefault() ; setSubmitted(1);}} className="custom-bg custom-form">   
+            <Form.NameForm setName={setName}></Form.NameForm>
+            <Form.EmailForm setMail={setMail}></Form.EmailForm>
+            
             <button type="submit" className="">Conferma!</button>
         </form>
 
@@ -37,3 +32,5 @@ if(submitted === 1){
         </>
     )
 }
+Form.NameForm = NameForm;
+Form.EmailForm = EmailForm;

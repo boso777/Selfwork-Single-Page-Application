@@ -1,11 +1,7 @@
-export default function List({names}){
+export default function List({children}){
     return (
         <ul className="custom_list">
-            {names.map((single_name)=>{
-                return(
-                    <li>{single_name}</li>
-                )
-            })}
+            {children}
         </ul>
     )
 }
