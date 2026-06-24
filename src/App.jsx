@@ -3,6 +3,7 @@ import Navbar from './assets/components/Navbar';
 import Header from './assets/components/Header'
 import Counter from "./assets/components/Counter";
 import Form from './assets/components/form';
+import LoadingData from './assets/components/LoadingData';
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
     </div>
     
     <Form></Form>    
+    
+    <LoadingData url="https://jsonplaceholder.typicode.com/users"></LoadingData>
+
     </>
   )
 }

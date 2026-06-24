@@ -100,3 +100,9 @@ border-radius: 20px;
     border-radius: 20px;    
     align-items: center;
 }
+
+.custom_list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center ;
+}
