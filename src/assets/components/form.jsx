@@ -1,28 +1,29 @@
 import { useState } from "react";
-import NameForm from "./NameForm";
-import EmailForm from "./EmailForm";
+import FormField from "./FormField";
 
-export default function Form(){
+export default function Form({children , fieldValue1 , fieldValue2}){
 
-const [name, setName] = useState("");   
-const [mail, setMail] = useState("");
 const [submitted, setSubmitted] = useState(0)
 
 let card = null;
 
-if(submitted === 1 && name !== "" && mail !== ""){
+function submit(){
+setSubmitted(1);
+}
+
+if(submitted === 1){
     card = <div className="custom-card">
-        <p>{name}</p>
-        <p>{mail}</p>
+        <p>{fieldValue1}</p>
+        <p>{fieldValue2}</p>
     </div>
     
 }
 
     return(
         <>
-        <form onSubmit={(e) => {e.preventDefault() ; setSubmitted(1);}} className="custom-bg custom-form">   
-            <Form.NameForm setName={setName}></Form.NameForm>
-            <Form.EmailForm setMail={setMail}></Form.EmailForm>
+        <form onSubmit={(e) => {e.preventDefault() ; submit()}} className="custom-bg custom-form">   
+
+            {children}
             
             <button type="submit" className="">Conferma!</button>
         </form>
@@ -32,5 +33,5 @@ if(submitted === 1 && name !== "" && mail !== ""){
         </>
     )
 }
-Form.NameForm = NameForm;
-Form.EmailForm = EmailForm;
+
+Form.FormField = FormField;

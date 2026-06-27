@@ -1,3 +1,5 @@
+import Item from "./Item";
+
 export default function List({children}){
     return (
         <ul className="custom_list">
@@ -5,3 +7,5 @@ export default function List({children}){
         </ul>
     )
 }
+
+List.Item = Item;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import List from './List';
 
-export default function Counter({children}){
+export default function Counter(){
 
     const [count, setCount] = useState(0);
     
@@ -14,8 +14,6 @@ export default function Counter({children}){
 
     return(
         <>
-        {children}
-        
         <div className="container_global">
         <div className="container_counter">
             <h5>Il numero da te selezionato è: </h5>
@@ -25,10 +23,7 @@ export default function Counter({children}){
             <button onClick={increment} className="custom_btn2">+</button> 
             </div>
         </div>  
-        
         </div>
         </>
     )
 }
-
-Counter.List = List;

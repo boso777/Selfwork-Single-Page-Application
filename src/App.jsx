@@ -1,47 +1,20 @@
 import './index.css'
+import { Routes, Route } from "react-router";
+import { BrowserRouter } from "react-router-dom";
+import Home from './assets/views/Home';
+import Posts from './assets/views/Posts';
 import Navbar from './assets/components/Navbar';
-import Header from './assets/components/Header'
-import Counter from "./assets/components/Counter";
-import Form from './assets/components/form';
-import LoadingData from './assets/components/LoadingData';
 
 function App() {
-
-  const name = "Mario";
-  const names = ['Luca' , 'Mario' , 'Antonio' , 'Carlo',];
-  
-  
-  return (  
-    <>
-    <Navbar></Navbar>
-    <Header></Header>
-      <Counter>
-        <Counter.List>
-          {names.map((single_name)=>{
-                  return(
-                      <li>{single_name}</li>
-                  )
-              })}
-        </Counter.List>
-      </Counter>
-    
-    <h1 className='title'>ciao {name ? name: 'sconosciuto'}</h1>
-    <img className="" src="https://picsum.photos/200" alt="" />
-    
-    <div>
-      <input type="text" id="sampletext" className='input'/>
-      <label htmlFor="sampletext" className='label'>Prova Label</label>
-    </div>
-    
-    <Form></Form>    
-    
-    <LoadingData url="https://jsonplaceholder.typicode.com/users"></LoadingData>
-
-    </>
-  )
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/posts" element={<Posts />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-
-
-
-export default App
+export default App;
