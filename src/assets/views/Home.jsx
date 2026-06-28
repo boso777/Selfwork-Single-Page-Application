@@ -28,6 +28,7 @@ function Home() {
           )
         })}
       </List>
+        <div className="container-nameform">
 
       <h1 className='title'>ciao {name1 ? name1 : 'sconosciuto'}</h1>
       <img className="" src="https://picsum.photos/200" alt="" />
@@ -36,7 +37,7 @@ function Home() {
         <input type="text" id="sampletext" className='input' />
         <label htmlFor="sampletext" className='label'>Prova Label</label>
       </div>
-
+    </div>
       <Form fieldValue1={name} fieldValue2={mail}>
         <Form.FormField fieldName={label1} fieldFunct={setName}></Form.FormField>
         <Form.FormField fieldName={label2} fieldFunct={setMail}></Form.FormField>

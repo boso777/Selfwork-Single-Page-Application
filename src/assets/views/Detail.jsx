@@ -21,8 +21,8 @@ export default function Detail() {
 
     return (
         <>
-            <h1>Post Numero: {id}</h1>
-            <p><strong>Titolo:</strong> {post.title}</p>
+            <h1>Post Id: {id}</h1>
+            <h4>Titolo: {post.title}</h4>
             <p>{post.body}</p>
         </>
     );
